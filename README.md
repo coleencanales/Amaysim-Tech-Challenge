@@ -25,9 +25,10 @@ Navigate to the Amaysim folder — all Cypress tests are run from here.
 Open Cypress GUI:
 npx cypress open
 
-
 Run all tests headlessly:
 npx cypress run
+
+Executable file is: checkPayment.cy.js
 
 ### Notes
 - Stripe.js is stubbed to simulate a declined payment; no real card entry is needed. <br>
