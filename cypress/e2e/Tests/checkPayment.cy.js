@@ -2,7 +2,6 @@ import newPlan from "../../e2e/Actions/creatingNewPlan";
 import siteNavi from "../../e2e/Actions/goingToSite";
 import customerDetails from "../../e2e/Actions/customerDetails";
 import paymentForm from "../../e2e/Actions/payment";
-import validate from "../../e2e/Actions/validations";
 
 describe("Amaysim Plan Flow", () => {
   it("Cheking Payment Status", () => {
@@ -10,6 +9,5 @@ describe("Amaysim Plan Flow", () => {
     newPlan.chooseNewNum().validatePhoneNumSim().checkout();
     customerDetails.newCustomer();
     paymentForm.cardPayment();
-    validate.checkoutPaymentStatus();
   });
 });

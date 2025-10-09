@@ -33,19 +33,11 @@ class BasePage {
   }
 
   failedPayments() {
-    cy.intercept("POST", "/v1/payment_methods", {
-      statusCode: 400,
-      body: {
-        success: false,
-        code: "card_declined",
-      },
-    }).as("mockPaymentFail");
-    cy.get("input[type='checkbox']").check({ force: true });
+      cy.get("input[type='checkbox']").check({ force: true });
     cy.get('button[type="submit"]')
       .invoke("css", "pointer-events", "auto")
       .click();
-    cy.wait("@mockPaymentFail",{ timeout: 10000 });
-    cy.contains("Payment Failed").should("be.visible");
+    cy.contains("Credit Card payment failed").should("be.visible");
   }
 }
 
