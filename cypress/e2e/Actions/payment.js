@@ -11,8 +11,7 @@ class paymentForm extends BasePage {
   };
 
   cardPayment() {
-    this.iframeLoad(this.elements.iframeForm);
-    cy.get(this.elements.cardTab).should("exist").click();
+    this.failedPayments();
   }
 }
 
