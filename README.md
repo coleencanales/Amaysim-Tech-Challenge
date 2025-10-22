@@ -31,7 +31,6 @@ npx cypress run
 Executable file is: checkPayment.cy.js
 
 ### Notes
-- Stripe.js is stubbed to simulate a declined payment; no real card entry is needed. <br>
 - Cross-origin iframe errors and addEventListener null errors are ignored automatically. <br>
 - The Pay button is force-enabled to allow clicking in tests. <br>
 - Faker.js can be used to generate random test data for forms. <br>
@@ -42,6 +41,5 @@ Executable file is: checkPayment.cy.js
 2. Pick a 7-day plan and proceed to the payment page.
 3. Attempt the purchase with a credit card that would normally be declined.
 4. Real card details couldn’t be entered due to cross-origin iframe restrictions — a current limitation with handling iframes.
-  A Stripe.js stub simulates the declined payment. <br>
   This highlights that the UI can be tested, but direct iframe interaction isn’t implemented yet.
 5. Verify that the “Credit Card payment failed” message is shown in the UI.
